@@ -1,0 +1,25 @@
+h3 New Resource
+form(action='/resources', method='POST')
+  p.sixteen.columns 
+    label(for='name') Name
+    input(style='width:100%', type='text', name='name', placeholder='Resource Name')
+  p.sixteen.columns
+    label(for='link') Link
+    input(style='width:100%', type='text', name='link', placeholder='http://')
+  p.sixteen.columns
+    label Resource Type
+    ul
+      each resourceType in types
+        li.two.column
+          label
+            input(type='radio', name='resource_type', value=resourceType)
+            &nbsp;
+            = resourceType
+  
+  p.sixteen.columns
+    label(for='tags') Tags
+    input(type='text', name='tags', placeholder='Tags eg, nodejs, ruby, coffeescript')
+  p.sixteen.columns
+    button Create Resource
+    &nbsp;
+    a.button(href='/') Cancel

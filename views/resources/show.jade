@@ -1,0 +1,31 @@
+.sixteen.columns
+  h3(style='float:right;') 
+    a.button(href='/') Resources
+
+.eight.columns
+  h3 Name: #{name}
+  p
+    Link
+    a(href=link)= link
+  p
+    Type
+    = resource_type
+  p
+    a.button(href="/resources/#{_id}/edit") Edit
+    &nbsp;
+    a.button(href='/') Return
+.eight.columns
+  h3 Comments
+  ul#comments
+    each comment in comments
+      li
+        p= comment.body
+        span(style='float:right;')= comment.author
+
+  hr
+  form(method='post', action="/resources/#{_id}/comments")
+    p
+      label New Comment
+      textarea(name='body')
+    p
+      button Create Comment

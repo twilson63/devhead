@@ -1,0 +1,18 @@
+
+h1= title
+form(method='get', action='/')
+  .eight.columns
+    input(style='font-size: 1.5em;width:100%;', name='q', type='text', placeholder='Search Your Resources', autofocus)
+  .two.columns
+    button Search
+  .two.columns
+    a.button(href='/resources/new') Add
+hr
+.sixteen.columns
+  ul#resources
+    each res in resources
+      li(data-href=res.link)
+        span(style='float:right;')= res.tags
+        h3: a(style='text-decoration:none;', href="/resources/#{res._id}")= res.name
+        p: a(href=res.link)= res.link
+        

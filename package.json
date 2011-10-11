@@ -1,0 +1,16 @@
+{
+    "name": "devhead"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.4.7"
+    , "jade": "*"
+    , "mongoskin": "*"
+  }
+  , "devDependencies": {
+      "coffee-script": "*"
+    , "jasmine-node": "*"
+    , "zombie": "0.9.x"
+  }
+  , "engine" : "node >=0.4.7"
+}

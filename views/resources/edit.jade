@@ -1,0 +1,26 @@
+h3 Edit Resource
+form(action='/resources/#{_id}', method='POST')
+  input(type='hidden', name='_method', value='put')
+  p.sixteen.columns 
+    label Name
+    input(style='width:100%', type='text', name='name', placeholder='Resource Name', value=name)
+  p.sixteen.columns
+    label Link
+    input(style='width:100%', type='text', name='link', placeholder='http://', value=link)
+  p.sixteen.columns
+    label Resource Type
+    ul
+      each resType in types
+        li.two.column
+          label
+            if resType == resource_type
+              input(type='radio', name='resource_type', value=resType, checked)
+            else
+              input(type='radio', name='resource_type', value=resType)
+            &nbsp;
+            = resType
+  
+  p.sixteen.columns
+    button Update Resource
+    &nbsp;
+    a.button(href='/') Cancel
